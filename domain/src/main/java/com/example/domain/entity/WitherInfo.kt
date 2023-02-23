@@ -1,5 +1,8 @@
 package com.example.domain.entity
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class WitherInfo(
     val base: String,
     val clouds: Clouds,

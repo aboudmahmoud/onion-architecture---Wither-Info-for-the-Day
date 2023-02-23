@@ -1,5 +1,8 @@
 package com.example.domain.entity
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Main(
     val feels_like: Double,
     val humidity: Int,

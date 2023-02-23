@@ -13,6 +13,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -41,10 +42,10 @@ class MainActivity : ComponentActivity() {
 
     ) {
         val infoCity =witherViewModel.witherdata.collectAsState().value
-        Box() {
+        Box( modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             Card() {
                 Column() {
-                    Row() {
+
 
                         if (infoCity != null) {
                             Text(text = "City Name : ${infoCity.name}")
@@ -52,7 +53,7 @@ class MainActivity : ComponentActivity() {
                             Text(text = "Main Wither description: ${infoCity.weather[0].description}")
                             Text(text = "Wind Speed: ${infoCity.wind.speed}")
                         }
-                    }
+
                 }
             }
         }
